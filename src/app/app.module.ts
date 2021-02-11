@@ -9,6 +9,8 @@ import { TestingCenterComponent } from './testing-center/testing-center.componen
 import { DataService } from './data-service';
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './map/map.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { MapComponent } from './map/map.component';
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'todo'
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
