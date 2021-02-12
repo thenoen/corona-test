@@ -1,0 +1,28 @@
+<agm-map *ngIf="centers !== undefined && centers.length > 0"
+    [latitude]="parseFloat(centers[0].latitude)"
+    [longitude]="parseFloat(centers[0].longitude)">
+
+    <agm-marker *ngFor="let center of centers"
+        [latitude]="parseFloat(center.latitude)"
+        [longitude]="parseFloat(center.longitude)"
+        [title]="center.title"
+        [markerDraggable]="true"
+        (markerClick)="clickedMarker(infoWindow, center)"
+        [openInfoWindow]="true"
+        [markerClickable]="true">
+        <agm-info-window #infoWindow>
+            <div>
+                <div>
+                    <strong>{{center.title}}</strong>
+                </div>
+                <div>
+                    {{center.street_name}} {{center.street_number}}
+                </div>
+                <div *ngIf="center.times != null">
+                    <div *ngFor="let time of center.times">{{time.c_date}} : {{time.free_capacity}}</div>
+                </div>
+            </div>
+      </agm-info-window>
+    </agm-marker>
+</agm-map>
+<div>{{centers.length}}</div>

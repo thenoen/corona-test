@@ -1,0 +1,50 @@
+{
+    "warnings": [],
+    "errors": [],
+    "info": [],
+    "payload": [
+        {
+            "c_date": "2021-02-11",
+            "is_closed": "0",
+            "free_capacity": "144"
+        },
+        {
+            "c_date": "2021-02-12",
+            "is_closed": "0",
+            "free_capacity": "82"
+        },
+        {
+            "c_date": "2021-02-13",
+            "is_closed": "1",
+            "free_capacity": "0"
+        },
+        {
+            "c_date": "2021-02-14",
+            "is_closed": "1",
+            "free_capacity": "0"
+        },
+        {
+            "c_date": "2021-02-15",
+            "is_closed": "0",
+            "free_capacity": "153"
+        },
+        {
+            "c_date": "2021-02-16",
+            "is_closed": "0",
+            "free_capacity": "173"
+        },
+        {
+            "c_date": "2021-02-17",
+            "is_closed": "0",
+            "free_capacity": "180"
+        },
+        {
+            "c_date": "2021-02-18",
+            "is_closed": "0",
+            "free_capacity": "180"
+        }
+    ],
+    "warning_count": 0,
+    "error_count": 0,
+    "payload_count": 8
+}

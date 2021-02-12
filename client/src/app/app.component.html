@@ -1,0 +1,15 @@
+
+<div>
+  <p>drive-in count: {{driveInsCount}}</p>
+</div>
+<input name="searchInput" [(ngModel)]="searchInput" type="text" placeholder="Search for testing center" size="50">
+
+<app-map [centers]='driveIns | search: searchInput'></app-map>
+<div>
+  <h6> Results </h6>
+  <ul>
+    <li *ngFor="let drivein of driveIns | search: searchInput">
+      <app-testing-center [driveIn]="drivein" ></app-testing-center>
+    </li>
+  </ul>
+</div>
