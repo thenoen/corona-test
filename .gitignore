@@ -46,5 +46,6 @@ testem.log
 Thumbs.db
 
 /server/.idea/
+/server/target/
 /client/node_modules/
 /client/dist/
