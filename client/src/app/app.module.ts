@@ -11,13 +11,16 @@ import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './map/map.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoadingProgressComponent } from './loading-progress/loading-progress.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchPipe,
     TestingCenterComponent,
-    MapComponent
+    MapComponent,
+    LoadingProgressComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +29,7 @@ import { environment } from '../environments/environment';
     AgmCoreModule.forRoot({
       apiKey: 'todo'
     }),
+    NgbModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [DataService],

@@ -19,11 +19,11 @@ export class TestingCenterComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     // console.log(changes);
-    this.dataService.getDriveInTimes(this.driveIn?.id)
-      .subscribe((response: DriveinTimesResponse) => {
-        // console.log(response.payload);
-      },
-        error => console.log('oops', error));
+    // this.dataService.getDriveInTimes(this.driveIn?.id)
+    //   .subscribe((response: DriveinTimesResponse) => {
+    //     // console.log(response.payload);
+    //   },
+    //     error => console.log('oops', error));
   }
 
   public toFloat(value: string): number {

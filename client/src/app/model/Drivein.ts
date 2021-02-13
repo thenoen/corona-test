@@ -11,6 +11,7 @@ export interface Drivein {
     title: string;
     latitude: string;
     longitude: string;
+    postal_code: string;
 
     times: DateCapacity[];
 }

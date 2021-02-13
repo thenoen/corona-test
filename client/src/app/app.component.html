@@ -1,15 +1,17 @@
-
-<div>
-  <p>drive-in count: {{driveInsCount}}</p>
+<div class="input-group mx-auto  mt-1 mb-3" style="width: 300px">
+  <input type="text" placeholder="Testovacie miesto" class="form-control" [(ngModel)]="searchInput" (keypress)="valueChange($event)" >
 </div>
-<input name="searchInput" [(ngModel)]="searchInput" type="text" placeholder="Search for testing center" size="50">
+
+<div class="mx-auto mb-1 justify-content-center d-flex" style="width: 300px">
+  <p>Počet: {{driveInsCount}}</p>
+</div>
 
 <app-map [centers]='driveIns | search: searchInput'></app-map>
-<div>
-  <h6> Results </h6>
-  <ul>
-    <li *ngFor="let drivein of driveIns | search: searchInput">
+
+<div class="d-flex align-self-stretch align-content-start flex-wrap bd-highlight mb-3">
+  
+    <div class="testing-center m-2" *ngFor="let drivein of driveIns | search: searchInput">
       <app-testing-center [driveIn]="drivein" ></app-testing-center>
-    </li>
-  </ul>
+    </div>
+  
 </div>

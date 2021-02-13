@@ -30,7 +30,7 @@ public class DataResource {
 
   @GetMapping("/worker-test")
   public String getWorkerTest() {
-    return LocalDateTime.now().toString();
+    return "{\"data\": \"" + LocalDateTime.now().toString() + "\"}";
   }
 
 }

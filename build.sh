@@ -4,6 +4,7 @@ pushd client
 ng build --prod
 popd
 
+mkdir server/src/main/resources/static
 cp client/dist/corona-test/* server/src/main/resources/static/ -R
 
 pushd server

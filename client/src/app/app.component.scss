@@ -1,3 +1,11 @@
-div {
-    background-color: gray;
+.testing-center {
+    background-color: lavender;
+}
+
+.testing-center:hover {
+    background-color: skyblue;
+}
+
+.testing-center {
+    min-width: 350px;
 }

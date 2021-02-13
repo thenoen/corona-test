@@ -1,5 +1,15 @@
-<div>
+<!-- <div>
     <strong>{{driveIn?.title}}</strong>
     <div>{{driveIn?.street_name}} {{driveIn?.street_number}}</div>
     <div>{{driveIn?.latitude}} {{driveIn?.longitude}}</div>
+</div> -->
+
+<div class="card border-primary">
+    <div class="card-header">{{driveIn?.title}}</div>
+    <div class="card-body">
+        <!-- <h5 class="card-title">Primary card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        <div>{{driveIn?.street_name}} {{driveIn?.street_number}}, {{driveIn?.city}}, {{driveIn?.postal_code}}</div>
+        <div>lat: {{driveIn?.latitude}} long: {{driveIn?.longitude}}</div>
+    </div>
 </div>
