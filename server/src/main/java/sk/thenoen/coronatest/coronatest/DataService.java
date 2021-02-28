@@ -5,9 +5,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.function.ServerRequest;
 
 import java.io.IOException;
 import java.net.URI;
@@ -29,12 +31,9 @@ public class DataService {
 
   public String getDriveins() {
 
-    final ClientHttpRequest request;
     try {
-      final URI uri = URI.create(baseUrl + "get_driveins");
-      request = template.getRequestFactory().createRequest(uri, HttpMethod.GET);
-
-      final HttpHeaders headers = request.getHeaders();
+      final URI uri = URI.create(baseUrl + "get_all_drivein_times");
+      final HttpHeaders headers = new HttpHeaders();
       headers.put("Host", Collections.singletonList("mojeezdravie.nczisk.sk"));
       headers.put("Connection", Collections.singletonList("keep-alive"));
       headers.put("Pragma", Collections.singletonList("no-cache"));
@@ -52,10 +51,12 @@ public class DataService {
       headers.put("Accept-Encoding", Collections.singletonList("gzip, deflate, br"));
       headers.put("Accept-Language", Collections.singletonList("sk,en-US;q=0.9,en;q=0.8"));
 
+      final HttpEntity<ServerRequest.Headers> httpEntity = new HttpEntity<>(headers);
+      final ResponseEntity<String> exchange = template.exchange(uri, HttpMethod.GET, httpEntity, String.class);
 
-      return template.getForObject(baseUrl + "get_driveins", String.class);
+      return exchange.getBody();
 
-    } catch (RuntimeException | IOException e) {
+    } catch (RuntimeException e) {
       logger.error("Cannot retrieve Driveins: {}", e.getMessage());
       return "";
     }

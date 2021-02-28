@@ -56,9 +56,9 @@ export class AppComponent implements OnInit {
   }
 
   valueChange(event: any): void {
-    console.log("Changes" + event.target.value);
-    console.log(event);
-    this.driveInsCount = this.searchPipe.transform(this.driveIns, event.target.value).length
+    console.log("Changes: " + event.target.value);
+    console.log("new value: "  + event.key);
+    this.driveInsCount = this.searchPipe.transform(this.driveIns, event.target.value ).length
   }
 
   private modalRef: any;

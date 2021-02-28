@@ -1,0 +1,9 @@
+<div id="wrapper">
+
+    <div *ngFor="let time of times">
+        <div [ngClass]="{'pale': time.free_capacity == '0' || time.is_closed == 'true'}">
+            {{time.c_date}} : {{time.free_capacity}}
+        </div>
+    </div>
+
+</div>

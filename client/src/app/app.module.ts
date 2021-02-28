@@ -13,6 +13,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoadingProgressComponent } from './loading-progress/loading-progress.component';
+import { TimeTableComponent } from './time-table/time-table.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoadingProgressComponent } from './loading-progress/loading-progress.co
     SearchPipe,
     TestingCenterComponent,
     MapComponent,
-    LoadingProgressComponent
+    LoadingProgressComponent,
+    TimeTableComponent
   ],
   imports: [
     BrowserModule,

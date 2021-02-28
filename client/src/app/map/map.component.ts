@@ -27,10 +27,10 @@ export class MapComponent implements OnInit {
 
   clickedMarker(a: any, drivein: Drivein) {
     console.log(a);
-    // console.log(b);
-    this.dataService.getDriveInTimes(drivein.id).subscribe(data => {
-      drivein.times = data.payload;
-    });
+    console.log(drivein);
+    // this.dataService.getDriveInTimes(drivein.id).subscribe(data => {
+    //   drivein.calendar_data = data.payload;
+    // });
   }
 
   parseFloat = parseFloat

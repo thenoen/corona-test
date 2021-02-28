@@ -1,5 +1,5 @@
 <div class="input-group mx-auto  mt-1 mb-3" style="width: 300px">
-  <input type="text" placeholder="Testovacie miesto" class="form-control" [(ngModel)]="searchInput" (keypress)="valueChange($event)" >
+  <input type="text" placeholder="Testovacie miesto" class="form-control" [(ngModel)]="searchInput"  (keyup)="valueChange($event)">
 </div>
 
 <div class="mx-auto mb-1 justify-content-center d-flex" style="width: 300px">

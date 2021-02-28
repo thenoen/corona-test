@@ -18,8 +18,9 @@
                 <div>
                     {{center.street_name}} {{center.street_number}}
                 </div>
-                <div *ngIf="center.times != null">
-                    <div *ngFor="let time of center.times">{{time.c_date}} : {{time.free_capacity}}</div>
+                <div *ngIf="center.calendar_data != null">
+                    <!-- <div *ngFor="let time of center.calendar_data">{{time.c_date}} : {{time.free_capacity}}</div> -->
+                    <app-time-table [times]="center.calendar_data"></app-time-table>
                 </div>
             </div>
       </agm-info-window>
